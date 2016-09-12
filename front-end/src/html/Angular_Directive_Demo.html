@@ -1,0 +1,39 @@
+<!doctype html>
+<html ng-app="AngularDemo">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link rel="stylesheet" type="text/css" href="../css/user.css">
+    <script type="text/javascript" src="../../3rd_lib/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="../../3rd_lib/angular.min.js"></script>
+    <script type="text/javascript" src="../js/Angular_Demo.js"></script>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td>number:
+            </td>
+            <td>
+                <input ng-model="num"/>
+            </td>
+            <td>price
+            </td>
+            <td>
+                <input ng-model="price"/>
+                <select ng-model="inCurr">
+                    <option ng-repeat="c in currencies"></option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Total:</td>
+            <td><span ng-repeat="c in currencies">{{total(c) | currency:c}}</span></td>
+        </tr>
+    </table>
+    <input ng-model="name"/>
+    <div ng-controller="controller1">hello, {{name}}</div>
+</body>
+
+</html>
